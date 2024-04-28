@@ -16,6 +16,10 @@ const Card = ({ todo, reference }) => {
     const edit = () => {
         if (isEditable === true) {
             updateTodo(todo.id, newTitle, newContent)
+        } else {
+            if (newContent === 'Empty') {
+                setNewContent('')
+            }
         }
 
         setIsEditable(!isEditable)
